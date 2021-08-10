@@ -106,7 +106,7 @@
     "variables": {
         "vmImagePublisher": "MicrosoftWindowsDesktop",
         "vmImageOffer": "Windows-10",
-        "sku": "rs5-pro",
+        "sku": "rs5-pron-g2",
         "scriptFolder": ".",
         "setupScriptLocation": "[uri(parameters('_artifactsLocation'),concat(parameters('setupChocolateyScriptFileName'),parameters('_artifactsLocationSasToken')))]"
     },
