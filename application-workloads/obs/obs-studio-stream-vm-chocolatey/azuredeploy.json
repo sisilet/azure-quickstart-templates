@@ -69,7 +69,7 @@
         },
         "chocoPackages": {
             "type": "string",
-            "defaultValue": "obs-studio;obs-ndi;microsoft-teams;voicemeeter;vb-cable;googlechrome;microsoft-edge",
+            "defaultValue": "obs-studio;obs-ndi;microsoft-teams;voicemeeter;vb-cable;googlechrome;microsoft-edge;zoom",
             "metadata": {
                 "description": "List of Chocolatey packages to install separated by a semi-colon eg. linqpad;sysinternals"
             }
