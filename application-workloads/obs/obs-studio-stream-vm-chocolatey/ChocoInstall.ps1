@@ -17,8 +17,9 @@ Invoke-Command -ScriptBlock $sb
 # Invoke-Command -ScriptBlock $sb 
 
 #Install Chocolatey Packages
-choco install $chocoPackages -y -force
+choco install obs-studio obs-ndi microsoft-teams voicemeeter vb-cable googlechrome microsoft-edge zoom -y -force
 
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\ServerManager" -Name "DoNotOpenServerManagerAtLogon" -Value 1
+#Set-ItemProperty -Path "HKCU:\Software\Microsoft\ServerManager" -Name "DoNotOpenServerManagerAtLogon" -Value 1
+Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
 
 Write-Host "Packages from choco.org were installed"
