@@ -17,9 +17,7 @@ Invoke-Command -ScriptBlock $sb
 # Invoke-Command -ScriptBlock $sb 
 
 #Install Chocolatey Packages
-#$chocoPackages.Split(";") | ForEach {
-#    choco install $_ -y -force
-#}
+choco install $chocoPackages -y -force
 
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\ServerManager" -Name "DoNotOpenServerManagerAtLogon" -Value 1
 
