@@ -236,6 +236,30 @@
                     ]
                 }
             }
+        },
+        {
+            "name": "[concat(parameters('name'),'/SetupChocolatey')]",
+            "apiVersion": "2019-07-01",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines/', parameters('name'))]"
+            ],
+            "tags": {
+                "displayName": "config-choco"
+            },
+            "properties": {
+                "publisher": "Microsoft.Compute",
+                "type": "CustomScriptExtension",
+                "typeHandlerVersion": "1.10",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": [
+                        "[variables('setupScriptLocation')]"
+                    ],
+                    "commandToExecute": "[concat('powershell -ExecutionPolicy bypass -File ', variables('setupChocolateyScriptFileName'),' -chocoPackages ',parameters('chocoPackages'))]"
+                }
+            }
         }
     ],
     "outputs": {}
