@@ -257,7 +257,7 @@
                     "fileUris": [
                         "[variables('setupScriptLocation')]"
                     ],
-                    "commandToExecute": "[concat('powershell -ExecutionPolicy bypass -File ', variables('setupChocolateyScriptFileName'),' -chocoPackages ',parameters('chocoPackages'))]"
+                    "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('setupChocolateyScriptFileName'),' -chocoPackages ',parameters('chocoPackages'))]"
                 }
             }
         }
