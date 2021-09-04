@@ -17,7 +17,15 @@ Invoke-Command -ScriptBlock $sb
 # Invoke-Command -ScriptBlock $sb 
 
 #Install Chocolatey Packages
-choco install obs-studio obs-ndi microsoft-teams voicemeeter vb-cable googlechrome microsoft-edge zoom -y -force
+#choco install obs-studio obs-ndi microsoft-teams voicemeeter vb-cable googlechrome microsoft-edge zoom -y -force
+
+#Install Chocolatey Packages
+$chocoArr = @()
+$chocoPackages.Split(";") | ForEach {
+    $chocoArr += $_
+}
+
+choco install @chocoArr -y -force
 
 #Set-ItemProperty -Path "HKCU:\Software\Microsoft\ServerManager" -Name "DoNotOpenServerManagerAtLogon" -Value 1
 Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
